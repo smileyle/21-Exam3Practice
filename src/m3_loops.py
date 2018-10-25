@@ -150,14 +150,17 @@ def practice_problem3(start, n, threshold):
     v2 = 0
     list = []
     count = 0
+    check = start
     while count != n:
-        v1 = math.sin(k)
-        v2 = math.cos(k)
+        v1 = math.sin(check)
+        v2 = math.cos(check)
         if v1 + v2 > threshold:
-            list += [k]
+            list += [check]
             count += 1
         if count == n:
-            return list
+            break
+        check = check + 1
+    return list
 
     """
     What comes in:

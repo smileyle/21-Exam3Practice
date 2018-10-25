@@ -55,6 +55,9 @@ def run_test_shape():
 
 
 def shape(r):
+    string = ''
+    for k in range(r):
+
     """
     Prints a shape with r rows that looks like this example where r=7:
     +++++++!7654321

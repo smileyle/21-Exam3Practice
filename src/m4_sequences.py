@@ -190,7 +190,7 @@ def run_test_practice_problem4b():
 def practice_problem4b(sequence):
     if len(sequence) >= 2:
         var = sequence[0]
-        for k in range(0, len(sequence) - 1, 2):
+        for k in range(0, len(sequence), 2):
             if sequence[k] > var:
                 var = sequence[k]
         return var
@@ -280,7 +280,16 @@ def run_test_practice_problem4c():
 
 
 def practice_problem4c(points):
-    """ stuck
+    for k in range(len(points)):
+        x = points[k].x
+        y = points[k].y
+        if is_prime(x) & is_prime(y):
+            points[k].x = y
+            points[k].y = x
+            return points[k]
+    return 'Not found'
+
+    """ 
     What comes in:  A tuple of rg.Points, each of whose coordinates
       is an integer.
     What goes out:
@@ -310,7 +319,7 @@ def practice_problem4c(points):
       :rtype: rg.Point | string
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPORTANT: This problem is your LOWEST PRIORITY for preparing
@@ -357,12 +366,13 @@ def run_test_practice_problem4d():
 
 
 def practice_problem4d(sequence):
-    # v1 = 0
-    # for k in range(len(sequence)+1):
-    #     if is_prime(sequence[k]):
-    #         if is_prime(sequence[k+1]):
-    #             v1 += sequence[k]
-    # return v1
+    v1 = 0
+    for k in range(len(sequence)-1):
+        if is_prime(sequence[k]):
+            if is_prime(sequence[k+1]):
+                if sequence[k] != sequence[k+1]:
+                    v1 += sequence[k]
+    return v1
     """
     What comes in: A non-empty sequence of integers.
     What goes out: An integer that is the sum of all the items
@@ -412,7 +422,7 @@ def practice_problem4d(sequence):
       :rtype: int
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
