@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  LOOPS WITHIN LOOPS in SEQUENCES-OF-SUBSEQUENCES problems.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Lauren Smiley.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -71,8 +71,24 @@ def run_test_integers():
     print('Expected is:', expected)
     print('Actual is:  ', answer)
 
+    expected2 = [5, 17, 5, 1, 6, 13, 19, 4, 21, 5, 31, 9, 3]
+    answer2 = integers([(5, 17, 'hey'),
+                       ("hi there", 5, 1),
+                       [6, 13, 19],
+                       ('a', 4, 'r'),
+                       [21, 5, 31, 9, 3]
+                       ])
+    print('Expected is:', expected2)
+    print('Actual is:  ', answer2)
+
 
 def integers(sequence_of_sequences):
+    numbers = []
+    for k in range(len(sequence_of_sequences)):
+        for i in range(len(sequence_of_sequences[k])):
+            if sequence_of_sequences[k][i] == int:
+                numbers += [sequence_of_sequences[k][i]]
+    return numbers
     """
     Returns a new list that contains all the integers
     in the subsequences of the given sequence, in the order that they

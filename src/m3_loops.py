@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Lauren Smiley.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -134,9 +134,31 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ####################################################################
+    expected =[1]
+    actual = practice_problem3(1, 1, .9)
+    print("Test 15 expected:" + str(expected))
+    print("         actual:" + str(actual))
+    expected2 =[6, 7, 8, 9, 12]
+    actual2 = practice_problem3(5, 5, -.5)
+    print("Test 16 expected:" + str(expected2))
+    print("         actual:" + str(actual2))
+
 
 
 def practice_problem3(start, n, threshold):
+    v1 = 0
+    v2 = 0
+    list = []
+    count = 0
+    while count != n:
+        v1 = math.sin(k)
+        v2 = math.cos(k)
+        if v1 + v2 > threshold:
+            list += [k]
+            count += 1
+        if count == n:
+            return list
+
     """
     What comes in:
       -- An integer:  start

@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  SEQUENCES.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Lauren Smiley.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -109,6 +109,14 @@ def run_test_practice_problem4a():
 
 
 def practice_problem4a(sequence):
+    list = []
+    check = sequence[0]
+    for k in range(len(sequence)-0):
+        if [sequence[k]] != check:
+            check = [sequence[k]]
+        else:
+            list += [k-1]
+    return list
     """
     What comes in: A non-empty sequence.
     What goes out: Returns a list of integers,
@@ -134,7 +142,7 @@ def practice_problem4a(sequence):
       :type sequence: list | tuple | string
     """
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -180,6 +188,13 @@ def run_test_practice_problem4b():
 
 
 def practice_problem4b(sequence):
+    if len(sequence) >= 2:
+        var = sequence[0]
+        for k in range(0, len(sequence) - 1, 2):
+            if sequence[k] > var:
+                var = sequence[k]
+        return var
+
     """
     What comes in:
       A sequence of numbers, where the length of the sequence >= 2.
@@ -197,7 +212,7 @@ def practice_problem4b(sequence):
       :type sequence: (list | tuple) of (float | int)
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -265,7 +280,7 @@ def run_test_practice_problem4c():
 
 
 def practice_problem4c(points):
-    """
+    """ stuck
     What comes in:  A tuple of rg.Points, each of whose coordinates
       is an integer.
     What goes out:
@@ -342,6 +357,12 @@ def run_test_practice_problem4d():
 
 
 def practice_problem4d(sequence):
+    # v1 = 0
+    # for k in range(len(sequence)+1):
+    #     if is_prime(sequence[k]):
+    #         if is_prime(sequence[k+1]):
+    #             v1 += sequence[k]
+    # return v1
     """
     What comes in: A non-empty sequence of integers.
     What goes out: An integer that is the sum of all the items
